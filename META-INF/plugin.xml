@@ -1,0 +1,45 @@
+<idea-plugin version="2">
+  <id>com.syndatis.idea.git-status</id>
+  <name>Git Status</name>
+  <version>1.2</version>
+  <vendor email="piotr.wilkin@syndatis.com" url="http://www.syndatis.com">Syndatis</vendor>
+
+  <description><![CDATA[
+      Enable Git status for modules in project view
+
+      Known bugs: after Git operations status does not update instantly
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <ul>
+      <li>1.2: compatibility with newest GitToolBox, recompiled with Java 1.6 support</li>
+      <li>1.1: fixed NullPointer during interactive rebase</li>
+      <li>1.0: first version</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+  <depends>zielu.gittoolbox</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <projectViewNodeDecorator implementation="com.syndatis.idea.gitstatus.GitStatusViewNodeDecorator" />
+  </extensions>
+
+  <application-components>
+  </application-components>
+
+  <project-components>
+  </project-components>
+
+  <actions>
+  </actions>
+
+</idea-plugin>
