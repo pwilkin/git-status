@@ -87,7 +87,7 @@ public class GitStatusCalculator {
         String remoteName = trackInfo.getRemoteBranch().getNameForLocalOperations();
         RevListCount behind = this.behindCount(localName, remoteName, repository);
         RevListCount ahead = this.aheadCount(localName, remoteName, repository);
-        return GitAheadBehindCount.success(behind.value(), ahead.value());
+        return GitAheadBehindCount.success(ahead.value(), behind.value());
     }
 
     private RevListCount behindCount(String localName, String remoteName, GitRepository repository) {
